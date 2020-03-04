@@ -1,4 +1,6 @@
 import time
+from statistics import median
+
 import RPi.GPIO as GPIO
 from hx711 import HX711
 
@@ -14,7 +16,7 @@ try:
 
     while True:
         measures = hx711.get_raw_data(3)
-        print("  --  ".join(map(str, measures)))
+        print(median(measures))
         time.sleep(0.2)
 
 finally:
