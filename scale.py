@@ -14,7 +14,7 @@ try:
 
     while True:
         measures = hx711.get_raw_data(3)
-        print("  --  ".join(measures))
+        print("  --  ".join(map(str, measures)))
         time.sleep(0.2)
 
 finally:
